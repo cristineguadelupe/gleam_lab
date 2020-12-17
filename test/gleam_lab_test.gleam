@@ -46,3 +46,19 @@ pub fn curry3_test() {
   |> should.equal(0)
 }
 
+pub fn curry4_test() {
+  let fun = fn(a, b, c, d) { a + b + c + d}
+  let curried = gleam_lab.curry4(fun)
+
+  curried(1)(1)(1)(1)
+  |> should.equal(4)
+}
+
+// Teste para o meu curry de aridade 7
+pub fn curry7_test() {
+  let fun = fn(a, b, c, d, e, f, g) { a + b + c + d + e + f + g}
+  let curried = gleam_lab.curry7(fun)
+
+  curried(1)(1)(1)(1)(1)(1)(1)
+  |> should.equal(7)
+}

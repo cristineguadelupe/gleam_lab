@@ -69,3 +69,10 @@ pub fn curry6(fun: fn(a, b, c, d, e, f) -> value) {
     fn(b) { fn(c) { fn(d) { fn(e) { fn(f) { fun(a, b, c, d, e, f) } } } } }
   }
 }
+
+// Meu curry com aridade 7
+pub fn curry7(fun: fn(a, b, c, d, e, f, g) -> value) {
+  fn(a) {
+    fn(b) { fn(c) { fn(d) { fn(e) { fn(f) { fn(g) { fun(a, b, c, d, e, f, g) } } } } }}
+  }
+}
