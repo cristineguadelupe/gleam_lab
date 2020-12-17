@@ -44,3 +44,28 @@ pub fn add_one_and_double() {
 
   compose(add_one, double)
 }
+
+// Curry
+// Recebe uma função com aridade 2 e retorna o seu equivalente transformado
+pub fn curry2(fun: fn(a, b) -> value) {
+  fn(a) { fn(b) { fun(a, b) } }
+}
+
+// Gleam suporta nativamente curry com até aridade 6, sendo facilmente expandivel se necessário
+pub fn curry3(fun: fn(a, b, c) -> value) {
+  fn(a) { fn(b) { fn(c) { fun(a, b, c) } } }
+}
+
+pub fn curry4(fun: fn(a, b, c, d) -> value) {
+  fn(a) { fn(b) { fn(c) { fn(d) { fun(a, b, c, d) } } } }
+}
+
+pub fn curry5(fun: fn(a, b, c, d, e) -> value) {
+  fn(a) { fn(b) { fn(c) { fn(d) { fn(e) { fun(a, b, c, d, e) } } } } }
+}
+
+pub fn curry6(fun: fn(a, b, c, d, e, f) -> value) {
+  fn(a) {
+    fn(b) { fn(c) { fn(d) { fn(e) { fn(f) { fun(a, b, c, d, e, f) } } } } }
+  }
+}
