@@ -23,3 +23,9 @@ pub fn add_two_test() {
   gleam_lab.add_two(2)
   |> should.equal(4)
 }
+
+pub fn add_one_and_double_test() {
+  1
+  |> gleam_lab.add_one_and_double()
+  |> should.equal(4)
+}

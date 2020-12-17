@@ -31,3 +31,16 @@ pub fn add_two(x: Int) -> Int {
   twice(add_one, x)
 }
 
+// Composição de funções
+// Recebe duas funções e as encadeia para formar uma função que recebe 
+// a entrada da primeira e retorna a saída da segunda
+pub fn compose(fun1: fn(a) -> b, fun2: fn(b) -> c) -> fn(a) -> c {
+  fn(a) { fun2(fun1(a)) }
+}
+
+pub fn add_one_and_double() {
+  let add_one = fn(x: Int) {x + 1}
+  let double = fn(x: Int) {x * 2}
+
+  compose(add_one, double)
+}
